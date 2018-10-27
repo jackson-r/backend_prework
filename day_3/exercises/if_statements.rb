@@ -9,19 +9,19 @@
   # if it is snowy, print "coat"
   # if it is icy, print "yak traks"
 
-  weather = 'snowy'
+weather = 'rainy'
 
-  if weather == 'sunny'
-    p "sunscreen"
-  elsif weather == 'rainy'
-    p "umbrella"
-  elsif weather == 'snowy'
-    p "coat"
-  elsif weather == 'icy'
-    p "yak traks"
-  else
-    p "good to go!"
-  end
+if weather == 'sunny'
+  p "sunscreen"
+elsif weather == 'rainy'
+  p "umbrella"
+elsif weather == 'snowy'
+  p "coat"
+elsif weather == 'icy'
+  p "yak traks"
+else
+  p "good to go!"
+end
 
 # Manipulate the variable 'weather' to see if you can print something other
 # than 'coat'
@@ -42,11 +42,19 @@
 # When num_quarters = 2, program should print "I have enough money for a gumball"
 # When num_quarters = 3, program should print "I have enough money for a gumball"
 
-num_quarters = 0
+# Take an input from the use of the number of quarters
+puts "How many quarters do you have?\n> "
+num_quarters = $stdin.gets.chomp.to_i
+#probably need and exception handler here...
 
-puts "I have enough money for a gumball"
-puts "I don't have enough money for a gumball"
-
+# decide what to do with them (I guess my question here is, what is *usefull* documentation???)
+if num_quarters >= 1
+  puts "I have enough money for a gumball"
+else
+  puts "I don't have enough money for a gumball"
+# else # doesn't work, because to_i turns strings to integers.
+#   puts "Somehow I have #{num_quarters} quarters.  How did THAT happen..." 
+end
 
 #####################
 # Using the variables defined below, determine if you have the
@@ -59,5 +67,26 @@ puts "I don't have enough money for a gumball"
 # When cups_of_flour = 2 and has_sauce = true, your program should print "I can make pizza"
 # When cups_of_flour = 3 and has_sauce = true, your program should print "I can make pizza"
 
-cups_of_flour = 1
-has_sauce = true
+# User input for ingredients
+puts "How many cups of flour do I have?\n> "
+cups_of_flour = $stdin.gets.chomp.to_i
+puts "Do I have sauce?\nyes/no?"
+has_sauce = $stdin.gets.chomp
+if has_sauce == "yes"
+  has_sauce = true
+else 
+  has_sauce = false
+end
+ 
+if cups_of_flour >= 1
+  if has_sauce == true
+    puts "I can make pizza"
+    # This is the ONLY case where I can make pizza.  All other cases will be false.
+    # Yes, pizza requires flour and sauce.  It's ok, I'm a monster.
+  else
+    puts "I cannot make pizza"
+  end
+else
+  puts "I cannot make pizza"
+end
+
