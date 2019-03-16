@@ -20,12 +20,12 @@ clase Doge
   end
     
   def meme
-    p shitpost
+    p "shitpost"
   end
 
   def a_good_boy
-  p "
-                     ▄              ▄
+    p "
+                   ▄              ▄
                   ▌▒█           ▄▀▒▌
                   ▌▒▒█        ▄▀▒▒▒▐
                  ▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐
@@ -44,10 +44,15 @@ clase Doge
               ▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀
                 ▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀
                    ▒▒▒▒▒▒▒▒▒▒▀▀"
-
+  end
+end
 
 
 
 1. How do you create an instance of a class?
+instance = class.new   use the '.new' Object method
 
 1. What questions do you still have about classes in Ruby?
+
+Besides the added methods, is there anything at the fundamental level of ruby that makes a Class different than any other subset of Object?
+
